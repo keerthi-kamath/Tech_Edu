@@ -50,17 +50,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             color: DesignCourseAppTheme.darkerText,
           ),
         ),
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              icon: new Icon(Icons.menu),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-            );
-          },
-        ),
+
         actions: <Widget>[
           Padding(
             padding: EdgeInsets.only(right: 10.0),
