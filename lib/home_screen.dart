@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
-        // toolbarHeight: 60,
+        toolbarHeight: 60,
         title: Text(
           'TCE',
           style: TextStyle(
