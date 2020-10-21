@@ -1,10 +1,11 @@
-import 'package:tce_app/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:tce_app/app_theme.dart';
+
 import 'category_list_view.dart';
 import 'course_info_screen.dart';
 import 'design_course_app_theme.dart';
 import 'model/homelist.dart';
-import 'package:circular_profile_avatar/circular_profile_avatar.dart';
+// import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key key}) : super(key: key);
@@ -20,8 +21,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    animationController = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
+    animationController = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
     super.initState();
   }
 
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
-        toolbarHeight: 60,
+        // toolbarHeight: 60,
         title: Text(
           'TCE',
           style: TextStyle(
@@ -60,7 +60,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-
                 color: Colors.transparent, //remove this when you add image.
               ),
               child: Image.asset('assets/design_course/userImage.png'),
@@ -149,13 +148,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           // SizedBox(
           //   height: 20,
           // ),
-          Container(
-            width: 350,
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/edu.jpg"),
-                fit: BoxFit.fitWidth,
+          AspectRatio(
+            aspectRatio: 16 / 9,
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/bg.png"),
+                  fit: BoxFit.fitWidth,
+                ),
               ),
             ),
           ),
@@ -193,21 +193,21 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               ),
             ),
           ),
-      Padding(
-        padding: const EdgeInsets.only(
-          top: 23,
-          left: 20,
-        ),
-        child: Container(
-          child: Text(
-            'Lorem Ipsum',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 15,
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 23,
+              left: 20,
+            ),
+            child: Container(
+              child: Text(
+                'Lorem Ipsum',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
             ),
           ),
-        ),
-      ),
           Padding(
             padding: const EdgeInsets.only(
               top: 3,
@@ -239,32 +239,40 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 5,
-              left: 20,
-            ),
-            child: Container(
-              width: 150,
-              height: 150,
-              decoration:BoxDecoration(
-                image:DecorationImage(
-                  image: AssetImage(
-                    'assets/images/edu.jpg',
-                  ),
-                  fit: BoxFit.contain,
-                 
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 5,
+                  left: 20,
                 ),
-                shape: BoxShape.circle,
-
+                child: CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage("assets/images/bg.png",),
+                ),
               ),
-
-
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 5,
+                  left: 20,
+                ),
+                child: CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage("assets/images/bg.png",),
+                ),
               ),
-            ),
-
-
-
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 5,
+                  left: 20,
+                ),
+                child: CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage("assets/images/bg.png",),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -273,12 +281,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
 @override
 class HomeListView extends StatelessWidget {
-  const HomeListView(
-      {Key key,
-      this.listData,
-      this.callBack,
-      this.animationController,
-      this.animation})
+  const HomeListView({Key key, this.listData, this.callBack, this.animationController, this.animation})
       : super(key: key);
 
   final HomeList listData;
