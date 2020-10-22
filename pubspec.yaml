@@ -32,6 +32,7 @@ dependencies:
   smooth_star_rating: ^1.1.1
   intl: ^0.16.0
   circular_profile_avatar: ^1.0.7
+  carousel_widget:
 
 dev_dependencies:
   flutter_test:

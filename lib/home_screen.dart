@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tce_app/app_theme.dart';
-
 import 'category_list_view.dart';
 import 'course_info_screen.dart';
 import 'design_course_app_theme.dart';
 import 'model/homelist.dart';
+import 'package:flutter/material.dart';
+import 'package:carousel_widget/carousel_widget.dart';
 // import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -69,87 +70,87 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       ),
       body: ListView(
         children: <Widget>[
-          // Container(
-          //   child: FutureBuilder<bool>(
-          //     future: getData(),
-          //     builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-          //       if (!snapshot.hasData) {
-          //         return const SizedBox();
-          //       } else {
-          //         return Padding(
-          //           padding: EdgeInsets.only(
-          //               top: MediaQuery.of(context).padding.top),
-          //           child: Column(
-          //             mainAxisAlignment: MainAxisAlignment.center,
-          //             crossAxisAlignment: CrossAxisAlignment.start,
-          //             children: <Widget>[
-          //               Expanded(
-          //                 child: FutureBuilder<bool>(
-          //                   future: getData(),
-          //                   builder: (BuildContext context,
-          //                       AsyncSnapshot<bool> snapshot) {
-          //                     if (!snapshot.hasData) {
-          //                       return const SizedBox();
-          //                     } else {
-          //                       return GridView(
-          //                         padding: const EdgeInsets.only(
-          //                             top: 0, left: 12, right: 12),
-          //                         physics: const BouncingScrollPhysics(),
-          //                         scrollDirection: Axis.vertical,
-          //                         children: List<Widget>.generate(
-          //                           homeList.length,
-          //                           (int index) {
-          //                             final int count = homeList.length;
-          //                             final Animation<double> animation =
-          //                                 Tween<double>(begin: 0.0, end: 1.0)
-          //                                     .animate(
-          //                               CurvedAnimation(
-          //                                 parent: animationController,
-          //                                 curve: Interval(
-          //                                     (1 / count) * index, 1.0,
-          //                                     curve: Curves.fastOutSlowIn),
-          //                               ),
-          //                             );
-          //                             animationController.forward();
-          //                             return HomeListView(
-          //                               animation: animation,
-          //                               animationController:
-          //                                   animationController,
-          //                               listData: homeList[index],
-          //                               callBack: () {
-          //                                 Navigator.push<dynamic>(
-          //                                   context,
-          //                                   MaterialPageRoute<dynamic>(
-          //                                     builder: (BuildContext context) =>
-          //                                         homeList[index]
-          //                                             .navigateScreen,
-          //                                   ),
-          //                                 );
-          //                               },
-          //                             );
-          //                           },
-          //                         ),
-          //                         gridDelegate:
-          //                             SliverGridDelegateWithFixedCrossAxisCount(
-          //                           crossAxisCount: multiple ? 1 : 1,
-          //                         ),
-          //                       );
-          //                     }
-          //                   },
-          //                 ),
-          //               ),
-          //             ],
-          //           ),
-          //         );
-          //       }
-          //     },
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: 20,
-          // ),
           AspectRatio(
             aspectRatio: 16 / 9,
+            // Container(
+            //   child: FutureBuilder<bool>(
+            //     future: getData(),
+            //     builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+            //       if (!snapshot.hasData) {
+            //         return const SizedBox();
+            //       } else {
+            //         return Padding(
+            //           padding: EdgeInsets.only(
+            //               top: MediaQuery.of(context).padding.top),
+            //           child: Column(
+            //             mainAxisAlignment: MainAxisAlignment.center,
+            //             crossAxisAlignment: CrossAxisAlignment.start,
+            //             children: <Widget>[
+            //               Expanded(
+            //                 child: FutureBuilder<bool>(
+            //                   future: getData(),
+            //                   builder: (BuildContext context,
+            //                       AsyncSnapshot<bool> snapshot) {
+            //                     if (!snapshot.hasData) {
+            //                       return const SizedBox();
+            //                     } else {
+            //                       return GridView(
+            //                         padding: const EdgeInsets.only(
+            //                             top: 0, left: 12, right: 12),
+            //                         physics: const BouncingScrollPhysics(),
+            //                         scrollDirection: Axis.vertical,
+            //                         children: List<Widget>.generate(
+            //                           homeList.length,
+            //                           (int index) {
+            //                             final int count = homeList.length;
+            //                             final Animation<double> animation =
+            //                                 Tween<double>(begin: 0.0, end: 1.0)
+            //                                     .animate(
+            //                               CurvedAnimation(
+            //                                 parent: animationController,
+            //                                 curve: Interval(
+            //                                     (1 / count) * index, 1.0,
+            //                                     curve: Curves.fastOutSlowIn),
+            //                               ),
+            //                             );
+            //                             animationController.forward();
+            //                             return HomeListView(
+            //                               animation: animation,
+            //                               animationController:
+            //                                   animationController,
+            //                               listData: homeList[index],
+            //                               callBack: () {
+            //                                 Navigator.push<dynamic>(
+            //                                   context,
+            //                                   MaterialPageRoute<dynamic>(
+            //                                     builder: (BuildContext context) =>
+            //                                         homeList[index]
+            //                                             .navigateScreen,
+            //                                   ),
+            //                                 );
+            //                               },
+            //                             );
+            //                           },
+            //                         ),
+            //                         gridDelegate:
+            //                             SliverGridDelegateWithFixedCrossAxisCount(
+            //                           crossAxisCount: multiple ? 1 : 1,
+            //                         ),
+            //                       );
+            //                     }
+            //                   },
+            //                 ),
+            //               ),
+            //             ],
+            //           ),
+            //         );
+            //       }
+            //     },
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: 20,
+            // ),
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -279,6 +280,102 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 }
 
+class Intro extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Carousel Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyCarousel(),
+    );
+  }
+}
+
+class MyCarousel extends StatelessWidget {
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    initializeData();
+
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body:
+        Carousel(
+          listViews: [
+            Fragment(
+              child: getScreen(0),
+            ),
+            Fragment(
+              child: getScreen(1),
+            ),
+            Fragment(
+              child: getScreen(2),
+            )
+          ],
+        )
+    );
+  }
+
+  Widget getScreen(index) {
+    return new ListView(
+      children: <Widget>[
+        new Container(
+          height: 250.0,
+          margin: const EdgeInsets.fromLTRB(20.0, 90.0, 20.0, 0.0),
+          child: Image.asset(
+            imagenames.elementAt(index),
+          ),
+        ),
+        new Container(
+          height: 45.0,
+          margin: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 0.0),
+          child: Text(
+            titles.elementAt(index),
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
+        new Container(
+          height: 100.0,
+          margin: const EdgeInsets.fromLTRB(50.0, 12.0, 50.0, 0.0),
+          child: Text(
+            description.elementAt(index),
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 5,
+            style: TextStyle(fontSize: 15),
+          ),
+        ),
+      ],
+    );
+  }
+
+  List<String> titles = List();
+  List<String> description = List();
+  List<String> imagenames = List();
+
+  void initializeData() {
+    titles.add("Title of First Screen");
+    description.add("Description of First Screen");
+    imagenames.add("assets/images/bg.png");
+
+    titles.add("Title of Second Screen");
+    description.add(
+        "Description of Second Screen");
+    imagenames.add("assets/images/bg.png");
+
+    titles.add("Title of Third Screen");
+    description.add(
+        "Description of Third Screen");
+    imagenames.add("assets/images/bg.png");
+  }
+}
+
 @override
 class HomeListView extends StatelessWidget {
   const HomeListView({Key key, this.listData, this.callBack, this.animationController, this.animation})
@@ -330,6 +427,7 @@ class HomeListView extends StatelessWidget {
             moveTo(context);
           },
         ),
+
       ],
     );
   }
